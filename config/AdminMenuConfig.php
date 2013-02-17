@@ -1,0 +1,81 @@
+<?php
+namespace Config;
+
+/**
+ * 后台目录配置
+ * 目录不多，就采用写配置的方式
+ * @author chengjun
+ *
+ */
+class AdminMenuConfig {
+	public static $menu = array(
+			array(
+					'menuName'=>'网站设置',
+					'moudle'=>'',
+					'action'=>'',
+					'switch'=>'on',
+					'childCate'=>array(
+							array(
+									'name'=>'站点设置',
+									'module'=>'website',
+									'action'=>'manage',
+									'switch'=>'on'
+									),
+							array(
+									'name'=>'管理用户',
+									'module'=>'member',
+									'action'=>'manage',
+									'switch'=>'on'
+									),
+							),
+					),
+			array(
+					'menuName'=>'商家设置',
+					'moudle'=>'',
+					'action'=>'',
+					'switch'=>'on',
+					'childCate'=>array(
+							array(
+									'name'=>'管理商家',
+									'module'=>'shoper',
+									'action'=>'manage',
+									'switch'=>'on'
+									)
+							),
+					),
+			array(
+					'menuName'=>'菜品设置',
+					'moudle'=>'',
+					'action'=>'',
+					'switch'=>'on',
+					'childCate'=>array(
+							array(
+									'name'=>'管理菜品',
+									'module'=>'food',
+									'action'=>'manage',
+									'switch'=>'on'
+									),
+							array(
+									'name'=>'今日菜品',
+									'module'=>'food',
+									'action'=>'today',
+									'switch'=>'on'
+									)
+							),
+					),
+			array(
+					'menuName'=>'订餐管理',
+					'moudle'=>'',
+					'action'=>'',
+					'switch'=>'on',
+					'childCate'=>array(
+							array(
+									'name'=>'订餐统计',
+									'module'=>'order',
+									'action'=>'manage',
+									'switch'=>'on'
+									)
+							),
+					),
+		);
+}

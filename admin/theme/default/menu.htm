@@ -1,0 +1,30 @@
+<html>
+<head>
+<script type="text/javascript" src="{-$staticUrl-}js/jquery-1.6.1.min.js"></script>
+<link rel="stylesheet" href="{-$staticUrl-}css/menu.css" />
+<style type="text/css">
+body{font:'Courier New',Arial,sans-serif;font-size:13px;}
+#leftmenu{font:'Courier New',Arial,sans-serif;font-size:14px;}
+</style>
+</head>
+<body>
+<div id="leftmenu">
+	{-foreach from=$menu item=menuList-}
+	<div class="menue">
+		<div class="menutit">{-$menuList.menuName-}</div>
+		{-if !empty($menuList.childCate)-}
+		<div class="menulist">
+			<ul>
+				{-foreach from=$menuList.childCate item=menuChild-}
+				{-assign var=menuChildModule value=$menuChild.module-}
+				{-assign var=menuChildAction value=$menuChild.action-}
+				<li><a href="{-$admin_url-}?module={-$menuChildModule-}&action={-$menuChildAction-}" target="main">{-$menuChild.name-}</a></li>
+				{-/foreach-}
+			</ul>
+		</div>
+		{-/if-}
+	</div>
+	{-/foreach-}
+</div>
+</body>
+</html>

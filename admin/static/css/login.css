@@ -1,0 +1,21 @@
+body{background:url(../image/bg.gif) repeat; width:100%; height:100%; margin:0 auto; font-size:12px; color:#fff; font-family:Arial,Helvetica,sans-serif;}
+
+.clear{clear:both;}
+
+.boxCenter{background:url(../image/bg-login-top.png) repeat-x; width:100%; height:auto;}
+.loginBoxTop{padding:125px 0 50px; text-alin:center; width:100%;}
+.loginBoxTop h1{color:#eee; font-family:Calibri,Helvetica,Arial,sans-serif; font-weight:bold; width:100%; text-align:center; font-size:31px; margin:0px auto; padding:10px 0;}
+.loginBox{width:300px; margin:0px auto; }
+.loginBox p{line-height:1.7em; margin:0; padding:0;}
+.loginBox p label{font-size:14px; width:60px; float:left; padding-top:5px;}
+.loginBox p input{font-size:13px; padding:6px; width:210px; border:0 none; border-radius:4px; margin:0 0 20px 0px; float:right; }
+.loginBox p .button{margin:10px 0 0px 0; width:300px; height:30px; cursor:pointer; background:#999; border:1px solid #ccc; }
+.notice{background:url(../image/information.png); background-position:10px 11px !important; background-repeat:no-repeat !important; background-color:#141414;}
+#notice{display:block; border:0 none; border-radius:6px 6px 6px 6px; color:#585B66; margin:0 0 15px; width:100%;}
+#notice div{font-size:13px; color:#fff; padding:10px 10px 10px 36px; line-height:1.5em; display:block; font-style:normal; }
+#remberMe{float:right;}
+#remberMe input{width:auto; float:none; margin: 0 5px 0 0;}
+#verifyCode input{width:90px; float:right; margin-right:20px;}
+#verifyCode img{float:right;}
+
+.photoBox{ margin:10px auto; border:2px solid #333; width:125px; height:125px; background:url(../image/photo.png) no-repeat; background-position:-100px -150px; }
