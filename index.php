@@ -1,7 +1,7 @@
 <?php 
 /**
 * 脚本开始执行的时间
-* 测2322323
+* 测2322323方法
 * @var float
 */
 define('SCRIPT_TIME_START',microtime(true));
