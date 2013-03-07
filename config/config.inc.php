@@ -31,3 +31,5 @@ if(!defined('USERNAME')) define('USERNAME','root');
 if(!defined('PASSWORD')) define('PASSWORD','');
 if(!defined('TABLENAME')) define('TABLENAME','food');
 if(!defined('DBPREFIX')) define('DBPREFIX','pmin_');
+
+if(!defined('DEBUG')) define('DEBUG',true);

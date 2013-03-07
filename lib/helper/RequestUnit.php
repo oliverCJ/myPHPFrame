@@ -75,7 +75,7 @@ class RequestUnit {
 		$urlParams = array();
 		$queryStringUrl = self::getRawQueryString();
 		if(!empty($queryStringUrl)){
-			parse_url($queryStringUrl,$urlParams);
+			parse_str($queryStringUrl,$urlParams);
 			array_merge($_GET,$urlParams);
 		}
 		$path = self::getUrl();
@@ -92,7 +92,52 @@ class RequestUnit {
 		$path = $path[1];
 		if($path == 'index.php') $path = '';
 		if(!empty($path)){
-			
+			$path = explode('/', $path);
+			if(sizeof($path)==1)
+    		{
+    			$urlParams['module']	= 'index';
+    			$path	= str_replace('.html', '', $path[0]);
+    		}
+    		else
+    		{
+    			$urlParams['module']	=  $path[0];
+    			$path	= str_replace('.html', '', $path[1]);
+    		}
+    		$path			= explode('module-', $path);
+    		if(isset($path[1])) $path=$path[1];else $path=$path[0];
+    		$path			= explode('-', $path);
+    		$params = array();
+    		if (!empty($path[0]) and (sizeof($path)%2!=0))
+    		{
+    			$urlParams['action']	= (!empty($path[0])) ? str_replace('.html', '', $path[0]) : 'index';
+    			if(preg_match("/(\?|=)/i", $urlParams['action']))
+    			{
+    				$Promotion=explode('=',str_replace('?', '', $urlParams['action']));
+    				$urlParams[$Promotion[0]]=$Promotion[1];
+    				$urlParams['action']='index';
+    
+    			}
+    			for($i=1; $i<sizeof($path); $i=$i+2)
+    			{
+    				$params[$path[$i]]	= (isset($path[$i+1])) ? str_replace('.html', '', $path[$i+1]) : str_replace(".html", '', '');
+    			}
+    		}
+    		else
+    		{
+    			$urlParams['action']	= 'index';
+    			for($i=0; $i<sizeof($path); $i=$i+2)
+    			{
+    				$params[$path[$i]]	= (isset($path[$i+1])) ? str_replace('.html', '', $path[$i+1]) : str_replace(".html", '', '');
+    			}
+    		}
+    		foreach ($params as $k=>$v)
+    		{
+    		    if(empty($v))
+    		    {
+    		        unset($params[$k]);
+    		    }
+    		}
+    		$urlParams['params']	= $params;
 		}else{
 			$urlParams['module'] = 'index';
 			$urlParams['action'] = 'index';
