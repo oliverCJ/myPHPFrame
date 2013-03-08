@@ -30,6 +30,9 @@ class Template {
 		$tpl->right_delimiter	= THEME_RIGHT_DELIMITER;
 		
 		$tpl->assign('root_url', ROOT_URL);
+		$tpl->assign('css_path', CSS_PATH);
+		$tpl->assign('js_path', JS_PATH);
+		$tpl->assign('img_path', IMG_PATH);
 		$tpl->assign('themeRoot', THEME);
 		
 		return self::$smarty = $tpl; 

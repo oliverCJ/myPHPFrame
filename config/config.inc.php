@@ -1,6 +1,8 @@
 <?php
 define('MAGIC_QUOTES_GPC', get_magic_quotes_gpc());//函数取得 PHP 环境配置的magic_quotes_gpc 变量值
 
+define('WEB_NAME','My Web');
+
 if (!defined('ROOT_PATH'))//物理根目录
 {
 	define('ROOT_PATH', dirname(__DIR__).DIRECTORY_SEPARATOR);
@@ -22,6 +24,10 @@ if(!defined('PHPSF')) define('PHPSF','.php');
 
 //数据缓存根目录
 if (!defined('DATA_CACHE_ROOT_PATH')) define('DATA_CACHE_ROOT_PATH', ROOT_PATH . 'data'.DIRECTORY_SEPARATOR);
+
+if(!defined('CSS_PATH')) define('CSS_PATH',ROOT_URL . 'static' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR);
+if(!defined('JS_PATH')) define('JS_PATH',ROOT_URL . 'static' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR);
+if(!defined('IMG_PATH')) define('IMG_PATH',ROOT_URL . 'static' . DIRECTORY_SEPARATOR . 'image' . DIRECTORY_SEPARATOR);
 
 //数据连接类型
 if(!defined('SQL_TYPE')) define('SQL_TYPE','mysql');
