@@ -1,0 +1,41 @@
+{-include file="header.htm"-}
+			<div class="grid_2" id="reflist">
+          <div class="block">
+            <h3><a href="#">数学趣题</a></h3>
+            <ul>
+              <li><a href="{-$root_url-}math/threexsumone.html">3X+1问题</a></li>
+            </ul>
+		</div>
+
+			</div>
+
+      <div class="grid_10 home_box" id="content_box">
+        <div class="box">
+  <h2>数学模块描述</h2>
+  <div class="block">
+    <p>
+    用程序的方式描述数学
+    </p>
+    <p>
+    研究研究
+    </p>
+  </div>
+  {-if $child==1-}
+  <h2>{-$mathTitle-}</h2>
+  <div class="block">
+    <p>{-$mathDec-}</p>
+  </div>
+  <h2>实验结果</h2>
+  <div class="block">
+    <p>
+	内存消耗:{-$memoryUse-} MB<br/>
+	运行时间:{-$runTime-} s<br/>
+	例数：{-$randomNum-}
+	</p>
+	<p>
+	<pre>{-$result-}</pre>
+	</p>
+  </div>
+  {-/if-}
+</div>
+{-include file="footer.htm"-}
